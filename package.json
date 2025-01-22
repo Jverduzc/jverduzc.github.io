@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Educator JS Codespace Template",
   "source": "src/index.html",
-  "homepage": "https://github.com/jverduzc/jverduzc.github.io",
+  "homepage": "https://jverduzc.github.io",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://jverduzc.github.io/jverduzc.github.io'",
+    "build-gh": "parcel build --public-url 'https://jverduzc.github.io/'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
