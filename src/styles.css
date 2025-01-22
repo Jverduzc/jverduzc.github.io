@@ -123,3 +123,210 @@ img.socialIcon {
   height: 30px;
   width: 30px;
 }
+
+/* Scoped Styles for Home Component */
+.header-container {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #333;
+  background-color: #fff; /* Changed to white background */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.background-container {
+  width: 100%;
+  height: 250px; /* Increased height for better visibility */
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top; /* Align the image to the top */
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-top: -80px; /* Adjust to ensure profile picture overlaps appropriately */
+}
+
+.profile-frame {
+  width: 200px;
+  height: 200px;
+  border: 3px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-container {
+  margin-top: 1rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #fff; /* Changed text to white */
+  background-color: #008080; /* Teal background */
+  border: 1px solid #008080;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #005959; /* Darker teal for hover effect */
+}
+
+/* About Section Styles */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 0; /* Vertical spacing around the section */
+  background-color: #f9f9f9;
+  position: relative; /* Ensure content stays contained */
+}
+
+.about-content {
+  background-color: white;
+  width: 60%; /* Centered width */
+  padding: 4rem; /* Inner padding for the content */
+  margin: 0 auto; /* Center horizontally */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better style */
+  z-index: 1; /* Ensure it stays above the background */
+}
+
+.about-container .background {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: top; /* Align image to the top */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensures the background stays behind the content */
+}
+
+/* About Section Text and List */
+.about-content h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.about-content .large {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.about-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.about-content ul li {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-content hr {
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0 2rem;
+}
+
+.portfolio-container {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.portfolio-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.mosaic-tile {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mosaic-tile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.publication-link {
+  text-decoration: none;
+  color: #008080; /* Teal color for links */
+}
+
+.publication-link:hover {
+  color: #005959;
+}
+
+.publication-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.publication-description {
+  font-size: 1rem;
+  color: #666;
+}

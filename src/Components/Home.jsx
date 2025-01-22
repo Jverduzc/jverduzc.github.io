@@ -1,47 +1,61 @@
 /**
  * Home component
  *
- * The section at the top of the page to display image of your
- * choice, name and title that describes your career focus.
+ * A header section resembling a professional profile layout, featuring a profile picture,
+ * a background image, and organized details such as name, title, and additional information.
  */
 
 import React from "react";
-import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
 
 /**
- * Home background image
+ * Home background and profile images
  *
- * Below is a sample image. Upload the image of your choice into the "images"
- * directory and import here for use. Then, set imageAltText to string that 
- * represents what you see in that image.
- *
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
+ * Replace `backgroundImage` and `profileImage` with your chosen images.
+ * You can upload your images into the "images" directory.
  */
-import image from "../images/woman-with-tablet.jpg";
+import backgroundImage from "../images/snowy_background.jpg";
+import profileImage from "../images/JCVerduzco_ProfilePicture.png";
 
-const imageAltText = "Adult female in office setting leaning against a glass wall while holding a platinum Microsoft Surface Pro 7 in tablet mode preparing to write with Microsoft Surface Pen";
+const imageAltText = "Background showcasing a cool forest";
+const profileAltText = "Profile picture of the user";
 
 const Home = ({ name, title }) => {
   return (
-    <section id="home" className="min-height">
-      <img className="background" src={image} alt="" />
-      <div style={{ position: "absolute", top: "5rem", left: "2rem", width: "17rem" }}>
-        <h1>{name}</h1>
-        <h2>{title}</h2>
+    <header id="home" className="header-container">
+      {/* Background Image */}
+      <div className="background-container">
+        <img className="background-image" src={backgroundImage} alt={imageAltText} />
       </div>
-      <div style={{ position: "absolute", bottom: "3rem", left: "50%" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+
+      {/* Content Section */}
+      <div className="content-container">
+        {/* Profile Picture */}
+        <div className="profile-frame">
+          <img className="profile-picture" src={profileImage} alt={profileAltText} />
+        </div>
+
+        {/* Name and Title */}
+        <div className="text-container">
+          <h1 className="name" style={{ fontSize: "2rem" }}>{name}</h1>
+          <h2 className="title" style={{ fontSize: "1.5rem" }}>{title}</h2>
+        </div>
+
+        {/* Action Buttons */}
+        <div className="action-buttons">
+          <a href="#home" className="button">Home</a>
+          <a href="#about" className="button">About</a>
+          <a href="#portfolio" className="button">Research Publications</a>
+          <a href="#footer" className="button">Contact</a>
+        </div>
       </div>
-    </section>
+    </header>
   );
 };
 
 Home.defaultProps = {
-  name: "",
-  title: "",
+  name: "Your Name",
+  title: "Your Title or Career Focus",
 };
 
 Home.propTypes = {

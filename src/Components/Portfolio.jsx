@@ -1,83 +1,88 @@
 /**
  * Portfolio component
  *
- * Highlights some of  your creations. These can be designs, websites,
- * open source contributions, articles you've written and more.
- *
- * This is a great area for you to to continually add to and refine
- * as you continue to learn and create.
+ * A mosaic-style layout to display your research publications, making it easy to
+ * add more entries and consistent with the site's overall CSS styles.
  */
 
 import React from "react";
 
 /**
- * Desk image
+ * Mosaic Publications
  *
- * Below is a sample desk image. Feel free to update this to an image of your choice,
- * updating below imageAltText to string that represents what you see in that image.
- *
- * Need an image? Check out https://unsplash.com to download a photo you
- * freely use on your site.
+ * An array of objects that represent your publications, including the title,
+ * author list, journal information, and a link to the publication.
  */
-import image from "../images/design-desk.jpeg";
-
-const imageAltText = "desktop with books and laptop";
-
-/**
- * Project list
- *
- * An array of objects that will be used to display for your project
- * links section. Below is a sample, update to reflect links you'd like to highlight.
- */
-const projectList = [
+const publicationList = [
   {
-    title: "10 Things To Know About Azure Static Web Apps 🎉",
-    description:
-      "Collaboration to create a beginner friendly article to help explain Azure Static Web Apps and tooling to get started.",
-    url: "https://dev.to/azure/10-things-to-know-about-azure-static-web-apps-3n4i",
+    title: "Mapping microstructure to shock-induced temperature fields using deep learning",
+    authors: "Chunyu Li, Juan Carlos Verduzco, Brian H. Lee, Robert J. Appleton, & Alejandro Strachan",
+    journal: "npj Computational Materials, 9(178), 2023",
+    url: "https://doi.org/10.1038/s41524-023-01134-0",
   },
   {
-    title: "Web Development for Beginners",
-    description:
-      "Contributed sketch note imagery to accompany each lesson. These help provide visual representation of what is being taught.",
-    url: "https://github.com/microsoft/web-dev-for-beginners",
+    title: "Active Discovery of Donor:Acceptor Combinations for Efficient Organic Solar Cells",
+    authors: "Prateek Malhotra, Juan C. Verduzco, Subhayan Biswas, & Ganesh D. Sharma",
+    journal: "ACS Applied Materials & Interfaces, 14(49), 54895–54906, 2022",
+    url: "https://doi.org/10.1021/acsami.2c18540",
   },
   {
-    title: "My Resume Site",
-    description:
-      "Created from Microsoft's resume workshop and deployed to GitHub pages. Includes my experience and design abilities.",
-    url: "https://github.com/microsoft/workshop-library/tree/main/full/build-resume-website",
+    title: "Atomistic Mechanisms Underlying the Maximum in Diffusivity in Doped Li7La3Zr2O12",
+    authors: "Juan C. Verduzco, Ernesto E. Marinero, & Alejandro Strachan",
+    journal: "The Journal of Physical Chemistry C, 127(22), 10806–10812, 2023",
+    url: "https://doi.org/10.1021/acs.jpcc.3c01604",
   },
   {
-    title: "GitHub Codespaces and github.dev",
-    description:
-      "Video interview to explain when to use GitHub.dev versus GitHub Codespaces, and how best to use each tool.",
-    url: "https://www.youtube.com/watch?v=c3hHhRME_XI",
+    title: "A Review on Defect Engineering of Anode Materials for Solid-State Battery Applications",
+    authors: "Juan C. Verduzco, Brian Bettes, Qixuan Hu, & Ernesto E. Marinero",
+    journal: "Ionics, 29(439), 2023",
+    url: "https://doi.org/10.1007/s11581-022-04747-5",
+  },
+  {
+    title: "Hybrid Polymer-Garnet Materials for All-Solid-State Energy Storage Devices",
+    authors: "Juan C. Verduzco, John N. Vergados, Alejandro Strachan, & Ernesto E. Marinero",
+    journal: "ACS Omega, 6(24), 15551–15558, 2021",
+    url: "https://doi.org/10.1021/acsomega.1c01368",
+  },
+  {
+    title: "Ionic Conductivity Optimization of Composite Polymer Electrolytes through Filler Particle Chemical Modification",
+    authors: "Andres Villa, Juan Carlos Verduzco, Joseph A. Libera, & Ernesto E. Marinero",
+    journal: "Ionics, 27, 2483–2493, 2021",
+    url: "https://doi.org/10.1007/s11581-021-04042-9",
+  },
+  {
+    title: "Active Learning and Molecular Dynamics Simulations to Find High Melting Temperature Alloys",
+    authors: "David E. Farache, Juan C. Verduzco, Zachary D. McClure, Saaketh Desai, & Alejandro Strachan",
+    journal: "Computational Materials Science, 209, 111386, 2022",
+    url: "https://doi.org/10.1016/j.commatsci.2022.111386",
+  },
+  {
+    title: "An Active Learning Approach for the Design of Doped LLZO Ceramic Garnets for Battery Applications",
+    authors: "Juan C. Verduzco, Ernesto E. Marinero, & Alejandro Strachan",
+    journal: "Integrating Materials and Manufacturing Innovation, 10(299–310), 2021",
+    url: "https://doi.org/10.1007/s40192-021-00214-7",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
-          <img
-            src={image}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
-        </div>
+    <section id="portfolio" className="portfolio-container">
+      <h2 className="portfolio-title">Research Publications</h2>
+      <div className="mosaic-grid">
+        {publicationList.map((publication) => (
+          <div className="mosaic-tile" key={publication.title}>
+            <a
+              href={publication.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="publication-link"
+            >
+              <h3 className="publication-title">{publication.title}</h3>
+            </a>
+            <p className="publication-authors">{publication.authors}</p>
+            <p className="publication-journal">{publication.journal}</p>
+          </div>
+        ))}
       </div>
     </section>
   );
