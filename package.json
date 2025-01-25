@@ -1,7 +1,7 @@
 {
   "name": "educator-js-codespace-template",
   "version": "1.0.0",
-  "description": "Educator JS Codespace Template",
+  "description": "Juan C. Verduzco | Portfolio",
   "source": "src/index.html",
   "homepage": "https://jverduzc.github.io/portfolio",
   "scripts": {
@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "swiper": "^11.2.1"
   },
   "devDependencies": {
     "eslint": "^8.23.0",
