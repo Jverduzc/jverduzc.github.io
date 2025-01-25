@@ -1,7 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap";
 html, body {
-  height: 100%;
   width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: Montserrat, sans-serif;
@@ -9,8 +9,8 @@ html, body {
 }
 
 div#main {
-  width: 100vw;
   flex-direction: column;
+  width: 100vw;
   display: flex;
 }
 
@@ -28,11 +28,11 @@ section.padding {
 }
 
 section img.background {
-  height: 100%;
   object-fit: cover;
   pointer-events: none;
-  width: 100vmax;
   z-index: -1;
+  width: 100vmax;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -114,18 +114,18 @@ a:hover {
 }
 
 img.socialIcon {
-  height: 30px;
   width: 30px;
+  height: 30px;
 }
 
 .header-container {
-  min-height: 300px;
   text-align: center;
   color: #333;
   background-color: #fff;
   border-radius: 8px;
   flex-direction: column;
   align-items: center;
+  min-height: 300px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -138,10 +138,10 @@ img.socialIcon {
 }
 
 .background-image {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   object-position: top;
+  width: 100%;
+  height: 100%;
 }
 
 .content-container {
@@ -153,18 +153,18 @@ img.socialIcon {
 }
 
 .profile-frame {
-  width: 200px;
-  height: 200px;
   background-color: #fff;
   border: 3px solid #fff;
   border-radius: 50%;
+  width: 200px;
+  height: 200px;
   overflow: hidden;
 }
 
 .profile-picture {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 .text-container {
@@ -214,21 +214,21 @@ img.socialIcon {
 }
 
 .about-content {
-  width: 60%;
   z-index: 1;
   background-color: #fff;
   border-radius: 8px;
+  width: 60%;
   margin: 0 auto;
   padding: 4rem;
   box-shadow: 0 4px 6px #0000001a;
 }
 
 .about-container .background {
-  width: 100%;
-  height: 300px;
   object-fit: cover;
   object-position: top;
   z-index: 0;
+  width: 100%;
+  height: 300px;
   position: absolute;
   top: 0;
   left: 0;
@@ -281,9 +281,9 @@ img.socialIcon {
 }
 
 .mosaic-grid {
-  max-width: 1200px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
 }
@@ -322,4 +322,143 @@ img.socialIcon {
   font-size: 1rem;
 }
 
+.publication-swiper .swiper-pagination {
+  margin-top: 10px;
+  position: relative;
+  bottom: 0;
+}
+
+.swiper-slide-content .publication-link {
+  color: #04c;
+  text-decoration: none;
+}
+
+.swiper-slide-content .publication-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.swiper-slide-content .publication-authors, .swiper-slide-content .publication-journal {
+  color: #555;
+  font-size: .85rem;
+}
+
+@media (width <= 768px) {
+  .swiper-slide-content {
+    padding: 15px;
+    font-size: .9rem;
+  }
+}
+
+@media (width <= 480px) {
+  .swiper-slide-content {
+    padding: 10px;
+    font-size: .8rem;
+  }
+}
+
+.swiper-slide-content {
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px #0000001a;
+}
+
+.publication-image {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: .5rem;
+}
+
+.portfolio-container {
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+.solutions-slider-wrapper {
+  position: relative;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  transition: transform .3s;
+  overflow: hidden;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.publication-image {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.publication-title {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.publication-authors, .publication-journal {
+  color: #555;
+  font-size: .9rem;
+}
+
+.body.limit-text.lines--4 {
+  -webkit-line-clamp: 4;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.card-button {
+  padding: 16px;
+}
+
+.cta-link {
+  color: #0073e6;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+}
+
+.arrow-right svg {
+  margin-left: 8px;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #0073e6;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+  left: -20px;
+}
+
+.swiper-button-next {
+  right: -20px;
+}
 /*# sourceMappingURL=index.4d663569.css.map */
